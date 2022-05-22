@@ -1,0 +1,67 @@
+nav {
+  background-color: var(--background-nav);
+  color: white;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 160px 15px 160px;
+  border-bottom: 6px solid var(--button-color-nav);
+}
+
+nav img {
+  width: 75px;
+  height: auto;
+}
+
+nav .nav-social-media {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  align-items: center;
+}
+
+nav .nav-social-media div {
+  margin-right: 40px;
+  width: 225px;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav .nav-social-media div a {
+  color: var(--button-color-nav);
+  font-size: 30px;
+  transition: all .4s ease;
+}
+
+nav .nav-social-media div a:hover{
+    color: white;
+}
+
+nav .nav-social-media button {
+  width: 100px;
+  height: 40px;
+  background-color: white;
+  box-shadow: 4px 4px 0px var(--button-color-nav);
+  border-radius: 2px;
+  border: 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--background-nav);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+nav .nav-social-media button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--button-color-nav);
+}

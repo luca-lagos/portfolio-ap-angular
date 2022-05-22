@@ -1,0 +1,50 @@
+#about-me {
+  height: auto;
+  margin: auto 150px 20px 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 2px var(--background-home);
+}
+
+#about-me .about-me-content {
+  margin-left: 75px;
+  margin-top: 25px;
+  color: var(--navbar-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#about-me .about-me-content h1 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#about-me .about-me-content p {
+  font-size: 14px;
+  width: 70%;
+  margin-bottom: 30px;
+}
+
+#about-me .about-me-edit {
+  margin-top: 20px;
+  margin-right: 75px;
+  font-size: 20px;
+  padding: 10px;
+  width: 48px;
+  text-align: center;
+  border-radius: 50px;
+  background-color: var(--button-color-active-home);
+  color: white;
+  box-shadow: 4px 4px 0px var(--button-color-home);
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+#about-me .about-me-edit:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--button-color-home);
+}

@@ -1,0 +1,113 @@
+#experience {
+  height: auto;
+  margin: auto 150px 20px 150px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 2px var(--background-home);
+}
+
+#experience .experience-title {
+  margin-left: 75px;
+  margin-right: 75px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#experience .experience-title h1 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#experience .experience-title a {
+  font-size: 20px;
+  padding: 10px;
+  width: 45px;
+  text-align: center;
+  border-radius: 50px;
+  background-color: var(--button-color-active-home);
+  color: white;
+  box-shadow: 4px 4px 0px var(--button-color-home);
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+#experience .experience-title a:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--button-color-home);
+}
+
+#experience .experience-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 75px;
+  margin-right: 75px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+#experience .experience-panel .experience-panel-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#experience .experience-panel .experience-panel-content img {
+  width: 60px;
+  height: auto;
+  margin-right: 15px;
+}
+
+#experience .experience-panel .experience-panel-content div h1 {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text-color-subtitle-home);
+  margin-bottom: 10px;
+}
+
+#experience .experience-panel .experience-panel-content div h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-color-title-home);
+  margin-bottom: 10px;
+}
+
+#experience .experience-panel .experience-panel-content div h3 {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--text-color-title-home);
+  margin-bottom: 10px;
+}
+
+#experience .experience-panel .experience-panel-content div h3:last-child {
+    margin-bottom: 20px;
+   }
+
+#experience .experience-panel .experience-panel-edit{
+    width: 115px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#experience .experience-panel .experience-panel-edit a {
+  font-size: 20px;
+  padding: 10px;
+  width: 45px;
+  text-align: center;
+  border-radius: 50px;
+  background-color: var(--button-color-active-home);
+  color: white;
+  box-shadow: 4px 4px 0px var(--button-color-home);
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+#experience .experience-panel .experience-panel-edit a:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--button-color-home);
+}

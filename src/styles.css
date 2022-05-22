@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-nav: #363636;
+  --button-color-nav: #a7a6a6;
+  --background-home: #a7a6a6;
+  --text-color-title-home: #363636;
+  --text-color-subtitle-home: #5c5b5b;
+  --button-color-home: #0b4fad;
+  --button-color-active-home: #156de7;
+  --info-color-home: #0b4fad;
+  --info-color-active-home: #1670ec;
+}
+
+html,
+body,
+button,
+a {
+  text-decoration: none;
+    list-style: none;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+}
