@@ -16,6 +16,12 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { IndexComponent } from './components/index/index.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { RecoveryPasswordComponent } from './components/recovery-password/recovery-password.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +33,10 @@ import { FooterComponent } from './components/footer/footer.component';
     SkillsComponent,
     ProjectsComponent,
     FooterComponent,
+    IndexComponent,
+    LoginComponent,
+    RegisterComponent,
+    RecoveryPasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +45,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FormsModule,
     ReactiveFormsModule,
     NgCircleProgressModule.forRoot({}),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

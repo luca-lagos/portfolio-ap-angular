@@ -44,7 +44,7 @@ nav .nav-social-media div a:hover{
 }
 
 nav .nav-social-media button {
-  width: 100px;
+  width: 200px;
   height: 40px;
   background-color: white;
   box-shadow: 4px 4px 0px var(--button-color-nav);
