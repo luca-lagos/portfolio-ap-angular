@@ -1,3 +1,4 @@
+import { interceptorProvider } from './services/interceptor-service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -47,7 +48,9 @@ import { RecoveryPasswordComponent } from './components/recovery-password/recove
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    interceptorProvider,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

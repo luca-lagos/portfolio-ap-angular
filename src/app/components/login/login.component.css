@@ -1,5 +1,6 @@
 section {
   display: flex;
+  flex-direction: column;
   margin: auto;
   width: 100vw;
   height: 100vh;
@@ -71,7 +72,7 @@ section {
   border: 0;
   border-bottom: 2px solid var(--background-home);
   font-size: 14px;
-  transition: all .4s ease;
+  transition: all 0.4s ease;
 }
 
 #login-panel .login-body .form-control input:active,
@@ -105,15 +106,15 @@ section {
   box-shadow: 0px 0px 0px var(--button-color-home);
 }
 
-#login-panel .login-body hr{
+#login-panel .login-body hr {
   margin-top: 15px;
-    margin-bottom: 20px;
-    width: 15%;
-    border: 2px solid var(--background-home);
-    border-radius: 25px;
+  margin-bottom: 20px;
+  width: 15%;
+  border: 2px solid var(--background-home);
+  border-radius: 25px;
 }
 
-#login-panel .login-body .login-social-media{
+#login-panel .login-body .login-social-media {
   width: 70%;
   display: flex;
   justify-content: space-between;
@@ -121,25 +122,25 @@ section {
   margin-bottom: 15px;
 }
 
-#login-panel .login-body .login-social-media a{
+#login-panel .login-body .login-social-media a {
   font-size: 33px;
   color: var(--text-color-subtitle-home);
-  transition: all .4s ease;
+  transition: all 0.4s ease;
 }
 
-#login-panel .login-body .login-social-media a:hover{
-  color: #4267B2;
+#login-panel .login-body .login-social-media a:hover {
+  color: #4267b2;
 }
 
-#login-panel .login-body .login-social-media a:first-child:hover{
+#login-panel .login-body .login-social-media a:first-child:hover {
   color: #ea4335;
 }
 
-#login-panel .login-body .login-social-media a:last-child:hover{
+#login-panel .login-body .login-social-media a:last-child:hover {
   color: #0e76a8;
 }
 
-#login-panel .login-footer{
+#login-panel .login-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -149,15 +150,35 @@ section {
   font-weight: bold;
 }
 
-#login-panel .login-footer a{
+#login-panel .login-footer a {
   color: var(--button-color-home);
-  transition: all .4s ease;
+  transition: all 0.4s ease;
 }
 
-#login-panel .login-footer a:first-child{
+#login-panel .login-footer a:first-child {
   margin-bottom: 5px;
 }
 
-#login-panel .login-footer a:hover{
-  color: var(--button-color-active-home)
+#login-panel .login-footer a:hover {
+  color: var(--button-color-active-home);
+}
+
+#go-back {
+  margin: auto;
+  margin-top: -60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 25px;
+  border: 0;
+  background-color: var(--button-color-active-home);
+  color: white;
+  box-shadow: 4px 4px 0px var(--button-color-home);
+  cursor: pointer;
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+#go-back:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--button-color-home);
 }

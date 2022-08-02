@@ -5,14 +5,14 @@
     </div>
     <div class="login-body">
       <h2>Inicio de sesión</h2>
-      <form action="">
+      <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
         <div class="form-control">
           <label for="email">Correo electrónico</label>
-          <input type="text" name="email" id="" />
+          <input type="email" name="user_name" [(ngModel)]="userName" required/>
         </div>
         <div class="form-control">
           <label for="password">Contraseña</label>
-          <input type="password" name="password" id="" />
+          <input type="password" name="password" [(ngModel)]="password" required/>
         </div>
           <input type="submit" value="Iniciar sesión" />
       </form>
@@ -28,4 +28,7 @@
       <a href="register">¿No tienes una cuenta? Registrate.</a>
     </div>
   </div>
+  <button id="go-back" routerLink="">
+    <i class="fa-solid fa-rotate-left"></i>
+  </button>
 </section>
