@@ -1,3 +1,4 @@
+import { AddExperienceComponent } from './components/experience/form/add-experience/add-experience.component';
 import { RecoveryPasswordComponent } from './components/recovery-password/recovery-password.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'recovery-password', component: RecoveryPasswordComponent },
+  { path: 'add-experience', component: AddExperienceComponent },
 ];
 
 @NgModule({

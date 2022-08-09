@@ -13,6 +13,8 @@
   --text-color-subtitle-home: #5c5b5b;
   --button-color-home: #0b4fad;
   --button-color-active-home: #156de7;
+  --button-color-danger: #ad2a38;
+  --button-color-active-danger: #dc3545;
   --info-color-home: #0b4fad;
   --info-color-active-home: #1670ec;
 }
@@ -21,6 +23,7 @@ html,
 body,
 button,
 a,
+textarea,
 input {
   text-decoration: none;
     list-style: none;

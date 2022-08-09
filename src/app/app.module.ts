@@ -22,6 +22,9 @@ import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RecoveryPasswordComponent } from './components/recovery-password/recovery-password.component';
+import { AddExperienceComponent } from './components/experience/form/add-experience/add-experience.component';
+import { EditExperienceComponent } from './components/experience/form/edit-experience/edit-experience.component';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +41,8 @@ import { RecoveryPasswordComponent } from './components/recovery-password/recove
     LoginComponent,
     RegisterComponent,
     RecoveryPasswordComponent,
+    AddExperienceComponent,
+    EditExperienceComponent,
   ],
   imports: [
     BrowserModule,

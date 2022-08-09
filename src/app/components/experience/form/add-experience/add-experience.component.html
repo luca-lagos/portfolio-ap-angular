@@ -1,0 +1,96 @@
+<section>
+  <div id="add-experience-panel">
+    <div class="add-experience-header">
+      <img src="/assets/images/header/ap-logo.webp" alt="" />
+    </div>
+    <div class="add-experience-body">
+      <h2>Añadir experiencia</h2>
+      <form #f="ngForm" (ngSubmit)="onAdd()" novalidate>
+        <div id="jobName" class="form-control">
+          <label for="jobName">Empleo</label>
+          <input type="text" name="jobName" [(ngModel)]="jobName" required />
+        </div>
+        <div id="businessName" class="form-control">
+          <label for="businessName">Empresa</label>
+          <input
+            type="text"
+            name="businessName"
+            [(ngModel)]="businessName"
+            required
+          />
+        </div>
+        <div id="businessImg" class="form-control">
+          <label for="businessImg">Logo de empresa</label>
+          <input
+            type="text"
+            name="businessImg"
+            [(ngModel)]="businessImg"
+            required
+          />
+        </div>
+        <div id="jobDescription" class="form-control">
+          <label for="jobDescription">Descripción</label>
+          <textarea
+            name="jobDescription"
+            cols="30"
+            rows="10"
+            [(ngModel)]="jobDescription"
+            required
+          ></textarea>
+        </div>
+        <div id="location" class="form-control">
+          <label for="location">Dirección</label>
+          <input type="text" name="location" [(ngModel)]="location" required />
+        </div>
+        <div id="countryLocation" class="form-control">
+          <label for="countryLocation">Pais</label>
+          <input
+            type="text"
+            name="countryLocation"
+            [(ngModel)]="countryLocation"
+            required
+          />
+        </div>
+        <div id="workTime" class="form-control">
+          <label for="workTime">Tipo de empleo</label>
+          <select name="workTime" [(ngModel)]="workTime" required>
+            <option selected disabled>Elige una opcion</option>
+            <option value="Jornada parcial">Jornada parcial</option>
+            <option value="Jornada completa">Jornada completa</option>
+            <option value="Relacion de dependencia">
+              Relacion de dependencia
+            </option>
+            <option value="Temporal">Temporal</option>
+            <option value="Contrato">Contrato</option>
+          </select>
+        </div>
+        <div id="workStart" class="form-control">
+          <label for="workStart">Inicio</label>
+          <input
+            type="text"
+            name="workStart"
+            [(ngModel)]="workStart"
+            required
+          />
+        </div>
+        <div id="workEnd" class="form-control">
+          <label for="workEnd">Final</label>
+          <input type="text" name="workEnd" [(ngModel)]="workEnd" required />
+        </div>
+        <div id="actualWork" class="form-control">
+          <label for="actualWork">¿El empleo es actual?</label>
+          <input
+            type="text"
+            name="actualWork"
+            [(ngModel)]="actualWork"
+            required
+          />
+        </div>
+        <div id="form-buttons" class="form-control">
+          <input type="submit" value="Añadir" />
+          <button class="go-back" routerLink="">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
