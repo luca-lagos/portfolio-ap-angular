@@ -1,11 +1,14 @@
 import { interceptorProvider } from './services/interceptor-service';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import localeEs from '@angular/common/locales/es-AR';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeEs, 'es-AR');
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -24,7 +27,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { RecoveryPasswordComponent } from './components/recovery-password/recovery-password.component';
 import { AddExperienceComponent } from './components/experience/form/add-experience/add-experience.component';
 import { EditExperienceComponent } from './components/experience/form/edit-experience/edit-experience.component';
-
 
 @NgModule({
   declarations: [
@@ -53,9 +55,7 @@ import { EditExperienceComponent } from './components/experience/form/edit-exper
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
   ],
-  providers: [
-    interceptorProvider,
-  ],
+  providers: [interceptorProvider, { provide: LOCALE_ID, useValue: 'es-AR' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -86,13 +86,17 @@
 }
 
 #experience .experience-panel .experience-panel-content div h3:last-child {
-    margin-bottom: 20px;
-   }
+  margin-bottom: 20px;
+}
 
-#experience .experience-panel .experience-panel-edit{
-    width: 115px;
-    display: flex;
-    justify-content: space-between;
+#experience .experience-panel .experience-panel-content div h3.date-format {
+  text-transform: capitalize;
+}
+
+#experience .experience-panel .experience-panel-edit {
+  width: 115px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #experience .experience-panel .experience-panel-edit a {

@@ -19,7 +19,7 @@ export class ExperienceComponent implements OnInit {
   isLogged = false;
 
   ngOnInit(): void {
-    this.addExperience();
+    this.listExperience();
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
@@ -27,7 +27,7 @@ export class ExperienceComponent implements OnInit {
     }
   }
 
-  addExperience(): void {
+  listExperience(): void {
     this.experienceService.list().subscribe((data) => {
       this.experience = data;
     });
