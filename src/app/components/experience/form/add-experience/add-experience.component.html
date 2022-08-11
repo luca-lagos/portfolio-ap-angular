@@ -8,7 +8,13 @@
       <form #f="ngForm" (ngSubmit)="onAdd()" novalidate>
         <div id="jobName" class="form-control">
           <label for="jobName">Empleo</label>
-          <input type="text" name="jobName" [(ngModel)]="jobName" required />
+          <input
+            type="text"
+            name="jobName"
+            [(ngModel)]="jobName"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
         </div>
         <div id="businessName" class="form-control">
           <label for="businessName">Empresa</label>
@@ -16,6 +22,7 @@
             type="text"
             name="businessName"
             [(ngModel)]="businessName"
+            [ngModelOptions]="{ standalone: true }"
             required
           />
         </div>
@@ -25,6 +32,7 @@
             type="text"
             name="businessImg"
             [(ngModel)]="businessImg"
+            [ngModelOptions]="{ standalone: true }"
             required
           />
         </div>
@@ -35,12 +43,19 @@
             cols="30"
             rows="10"
             [(ngModel)]="jobDescription"
+            [ngModelOptions]="{ standalone: true }"
             required
           ></textarea>
         </div>
         <div id="location" class="form-control">
           <label for="location">Dirección</label>
-          <input type="text" name="location" [(ngModel)]="location" required />
+          <input
+            type="text"
+            name="location"
+            [(ngModel)]="location"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
         </div>
         <div id="countryLocation" class="form-control">
           <label for="countryLocation">Pais</label>
@@ -48,41 +63,57 @@
             type="text"
             name="countryLocation"
             [(ngModel)]="countryLocation"
+            [ngModelOptions]="{ standalone: true }"
             required
           />
         </div>
         <div id="workTime" class="form-control">
           <label for="workTime">Tipo de empleo</label>
-          <select name="workTime" [(ngModel)]="workTime" required>
-            <option selected disabled>Elige una opcion</option>
-            <option value="Jornada parcial">Jornada parcial</option>
-            <option value="Jornada completa">Jornada completa</option>
-            <option value="Relacion de dependencia">
-              Relacion de dependencia
+          <select
+            [(ngModel)]="workTime"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          >
+            <option *ngFor="let item of workTimeList" [value]="item">
+              {{ item }}
             </option>
-            <option value="Temporal">Temporal</option>
-            <option value="Contrato">Contrato</option>
           </select>
         </div>
         <div id="workStart" class="form-control">
           <label for="workStart">Inicio</label>
           <input
-            type="text"
+            type="date"
             name="workStart"
             [(ngModel)]="workStart"
+            [ngModelOptions]="{ standalone: true }"
             required
           />
         </div>
-        <div id="workEnd" class="form-control">
-          <label for="workEnd">Final</label>
-          <input type="text" name="workEnd" [(ngModel)]="workEnd" required />
-        </div>
         <div id="actualWork" class="form-control">
           <label for="actualWork">¿El empleo es actual?</label>
-          <input
-            type="text"
-            name="actualWork"
+          <select
+            #workEndModule
             [(ngModel)]="actualWork"
+            (change)="onSelectActualWork()"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          >
+            <option
+              *ngFor="let item of actualWorkList"
+              value="{{ item.value }}"
+            >
+              {{ item.text }}
+            </option>
+          </select>
+        </div>
+        <div id="workEnd" class="form-control">
+          <label for="workEnd">Final</label>
+          <input
+            type="date"
+            name="workEnd"
+            disabled="{{workEndState}}"
+            [(ngModel)]="workEnd"
+            [ngModelOptions]="{ standalone: true }"
             required
           />
         </div>

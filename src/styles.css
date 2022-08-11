@@ -24,6 +24,7 @@ body,
 button,
 a,
 textarea,
+select,
 input {
   text-decoration: none;
     list-style: none;
