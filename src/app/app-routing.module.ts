@@ -1,4 +1,5 @@
 import { AddExperienceComponent } from './components/experience/form/add-experience/add-experience.component';
+import { EditExperienceComponent } from './components/experience/form/edit-experience/edit-experience.component';
 import { RecoveryPasswordComponent } from './components/recovery-password/recovery-password.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'recovery-password', component: RecoveryPasswordComponent },
   { path: 'add-experience', component: AddExperienceComponent },
+  { path: 'edit-experience/:id', component: EditExperienceComponent },
 ];
 
 @NgModule({

@@ -1,1 +1,129 @@
-<p>edit-experience works!</p>
+<section>
+  <div id="edit-experience-panel">
+    <div class="edit-experience-header">
+      <img src="/assets/images/header/ap-logo.webp" alt="" />
+    </div>
+    <div class="edit-experience-body">
+      <h2>Editar experiencia</h2>
+      <form #f="ngForm" (ngSubmit)="onEdit()" novalidate>
+        <div id="jobName" class="form-control">
+          <label for="jobName">Empleo</label>
+          <input
+            type="text"
+            name="jobName"
+            [(ngModel)]="experience.jobName"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="businessName" class="form-control">
+          <label for="businessName">Empresa</label>
+          <input
+            type="text"
+            name="businessName"
+            [(ngModel)]="experience.businessName"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="businessImg" class="form-control">
+          <label for="businessImg">Logo de empresa</label>
+          <input
+            type="text"
+            name="businessImg"
+            [(ngModel)]="experience.businessImg"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="jobDescription" class="form-control">
+          <label for="jobDescription">Descripción</label>
+          <textarea
+            name="jobDescription"
+            cols="30"
+            rows="10"
+            [(ngModel)]="experience.jobDescription"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          ></textarea>
+        </div>
+        <div id="location" class="form-control">
+          <label for="location">Dirección</label>
+          <input
+            type="text"
+            name="location"
+            [(ngModel)]="experience.location"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="countryLocation" class="form-control">
+          <label for="countryLocation">Pais</label>
+          <input
+            type="text"
+            name="countryLocation"
+            [(ngModel)]="experience.countryLocation"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="workTime" class="form-control">
+          <label for="workTime">Tipo de empleo</label>
+          <select
+            [(ngModel)]="experience.workTime"
+            [ngModelOptions]="{ standalone: true }"
+            [value]="experience.workTime"
+            required
+          >
+            <option *ngFor="let item of workTimeList" [value]="item">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+        <div id="workStart" class="form-control">
+          <label for="workStart">Inicio</label>
+          <input
+            type="date"
+            name="workStart"
+            [(ngModel)]="experience.workStart"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="actualWork" class="form-control">
+          <label for="actualWork">¿El empleo es actual?</label>
+          <select
+            #workEndModule
+            [(ngModel)]="experience.actualWork"
+            (change)="onSelectActualWork()"
+            [ngModelOptions]="{ standalone: true }"
+            [value]="experience.actualWork"
+            required
+          >
+            <option
+              *ngFor="let item of actualWorkList"
+              value="{{ item.value }}"
+            >
+              {{ item.text }}
+            </option>
+          </select>
+        </div>
+        <div id="workEnd" class="form-control">
+          <label for="workEnd">Final</label>
+          <input
+            type="date"
+            name="workEnd"
+            disabled="{{ workEndState }}"
+            [(ngModel)]="experience.workEnd"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="form-buttons" class="form-control">
+          <input type="submit" value="Editar" />
+          <button class="go-back" (click)="goBack()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

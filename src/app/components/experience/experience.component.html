@@ -1,7 +1,9 @@
 <section id="experience">
   <div class="experience-title">
     <h1>Experiencia</h1>
-    <a href="add-experience" class="experience-add"><i class="fa-solid fa-plus"></i></a>
+    <a *ngIf="isLogged" href="add-experience" class="experience-add"
+      ><i class="fa-solid fa-plus"></i
+    ></a>
   </div>
   <div class="experience-panel" *ngFor="let e of experience">
     <div class="experience-panel-content">
@@ -11,36 +13,19 @@
         <h2>{{ e.businessName }} - {{ e.workTime }}</h2>
         <h3>{{ e.jobDescription }}</h3>
         <h3>{{ e.location }} - {{ e.countryLocation }}</h3>
-        <h3 class="date-format" *ngIf="e.actualWork === true">{{ e.workStart | date: 'MMMM, yyyy' }} - Actualidad</h3>
+        <h3 class="date-format" *ngIf="e.actualWork === true">
+          {{ e.workStart | date: "MMMM, yyyy" }} - Actualidad
+        </h3>
         <h3 class="date-format" *ngIf="e.actualWork === false">
-           {{ e.workStart }} - {{ e.workEnd }} 
+          {{ e.workStart }} - {{ e.workEnd }}
         </h3>
       </div>
     </div>
-    <div class="experience-panel-edit">
-      <a href="#" class="experience-edit"
+    <div *ngIf="isLogged" class="experience-panel-edit">
+      <a href="edit-experience/{{ e.id }}" class="experience-edit"
         ><i class="fa-solid fa-pen-to-square"></i
       ></a>
-      <a href="#" class="experience-delete"
-        ><i class="fa-solid fa-trash-can"></i
-      ></a>
-    </div>
-  </div>
-  <div class="experience-panel">
-    <div class="experience-panel-content">
-      <img src="assets/images/home/usa-gov-logo.webp" alt="" />
-      <div>
-        <h1></h1>
-        <h2></h2>
-        <h3></h3>
-        <h3></h3>
-      </div>
-    </div>
-    <div class="experience-panel-edit">
-      <a href="#" class="experience-edit"
-        ><i class="fa-solid fa-pen-to-square"></i
-      ></a>
-      <a href="#" class="experience-delete"
+      <a href="delete-experience/{{ e.id }}" class="experience-delete"
         ><i class="fa-solid fa-trash-can"></i
       ></a>
     </div>

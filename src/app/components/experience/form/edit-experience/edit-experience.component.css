@@ -1,0 +1,233 @@
+section {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.disable {
+  display: none;
+}
+
+#edit-experience-panel {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 768px;
+  height: auto;
+  box-shadow: 0px 0px 10px 2px var(--background-home);
+  border-radius: 5px;
+}
+
+#edit-experience-panel .edit-experience-header {
+  background-color: var(--info-color-home);
+  width: 100%;
+  text-align: center;
+  height: 200px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#edit-experience-panel .edit-experience-header img {
+  width: 375px;
+  margin-top: -20px;
+}
+
+#edit-experience-panel .edit-experience-body {
+  width: 768px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#edit-experience-panel .edit-experience-body h2 {
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 25px;
+  background-color: var(--info-color-active-home);
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+#edit-experience-panel .edit-experience-body form {
+  width: 718px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-template-rows: 0.2fr 0.2fr 0.2fr;
+  grid-template-areas:
+    "jobName businessName businessImg"
+    "jobDescription jobDescription jobDescription"
+    "location countryLocation workTime"
+    "workStart actualWork workEnd"
+    "formButtons formButtons formButtons";
+  grid-gap: 0.8rem;
+}
+
+#edit-experience-panel .edit-experience-body form #jobName {
+  grid-area: jobName;
+}
+
+#edit-experience-panel .edit-experience-body form #jobDescription {
+  grid-area: jobDescription;
+}
+
+#edit-experience-panel .edit-experience-body form #businessName {
+  grid-area: businessName;
+}
+
+#edit-experience-panel .edit-experience-body form #businessImg {
+  grid-area: businessImg;
+}
+
+#edit-experience-panel .edit-experience-body form #location {
+  grid-area: location;
+}
+
+#edit-experience-panel .edit-experience-body form #countryLocation {
+  grid-area: countryLocation;
+}
+
+#edit-experience-panel .edit-experience-body form #workTime {
+  grid-area: workTime;
+  position: relative;
+}
+
+#edit-experience-panel .edit-experience-body form #workStart {
+  grid-area: workStart;
+}
+
+#edit-experience-panel .edit-experience-body form #workEnd {
+  grid-area: workEnd;
+}
+
+#edit-experience-panel .edit-experience-body form #actualWork {
+  grid-area: actualWork;
+}
+
+#edit-experience-panel .edit-experience-body .form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+#edit-experience-panel .edit-experience-body .form-control label {
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--text-color-subtitle-home);
+  margin-bottom: 5px;
+}
+
+#edit-experience-panel .edit-experience-body .form-control input {
+  padding: 3px 10px 3px 10px;
+  margin-bottom: 13px;
+  border: 0;
+  border-bottom: 2px solid var(--background-home);
+  font-size: 14px;
+  transition: all 0.4s ease;
+}
+
+#edit-experience-panel .edit-experience-body .form-control textarea {
+  padding: 10px;
+  margin-bottom: 13px;
+  border: 0;
+  border: 2px solid var(--background-home);
+  font-size: 14px;
+  transition: all 0.4s ease;
+}
+
+#edit-experience-panel .edit-experience-body .form-control select {
+  padding: 3px 10px 3px 10px;
+  margin-top: -2px;
+  margin-bottom: 30px;
+  border: 0;
+  border-bottom: 2px solid var(--background-home);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+#edit-experience-panel .edit-experience-body .form-control input[type="date"] {
+  margin-top: -2px;
+}
+
+#edit-experience-panel .edit-experience-body.form-control .disable-work-end {
+  pointer-events: none;
+}
+
+#edit-experience-panel .edit-experience-body .form-control select:active,
+#edit-experience-panel .edit-experience-body .form-control select:focus {
+  outline: none;
+  border-bottom: 2px solid var(--info-color-active-home);
+}
+
+#edit-experience-panel .edit-experience-body .form-control input:active,
+#edit-experience-panel .edit-experience-body .form-control input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--info-color-active-home);
+}
+
+#edit-experience-panel .edit-experience-body.form-control textarea:active,
+#edit-experience-panel .edit-experience-body .form-control textarea:focus {
+  outline: none;
+  border: 2px solid var(--info-color-active-home);
+}
+
+#edit-experience-panel .edit-experience-body.form-control input:last-child {
+  margin-bottom: 25px;
+}
+
+#edit-experience-panel .edit-experience-body #form-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  grid-area: formButtons;
+  margin-bottom: 10px;
+}
+
+#edit-experience-panel .edit-experience-body #form-buttons input {
+  width: 250px;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 2px;
+  background-color: var(--button-color-active-home);
+  color: white;
+  box-shadow: 4px 4px 0px var(--button-color-home);
+  cursor: pointer;
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+#edit-experience-panel .edit-experience-body #form-buttons input:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--button-color-home);
+}
+
+#edit-experience-panel .edit-experience-body #form-buttons button {
+  width: 250px;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 2px;
+  background-color: var(--button-color-active-danger);
+  color: white;
+  box-shadow: 4px 4px 0px var(--button-color-danger);
+  cursor: pointer;
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+#edit-experience-panel .edit-experience-body #form-buttons button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--button-color-danger);
+}
