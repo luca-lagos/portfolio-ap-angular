@@ -1,0 +1,79 @@
+<section>
+  <div id="add-education-panel">
+    <div class="add-education-header">
+      <img src="/assets/images/header/ap-logo.webp" alt="" />
+    </div>
+    <div class="add-education-body">
+      <h2>Añadir educación</h2>
+      <form #f="ngForm" (ngSubmit)="onAdd()" novalidate>
+        <div id="title" class="form-control">
+          <label for="title">Título</label>
+          <input
+            type="text"
+            name="title"
+            [(ngModel)]="title"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="instituteName" class="form-control">
+          <label for="instituteName">Instituto</label>
+          <input
+            type="text"
+            name="instituteName"
+            [(ngModel)]="instituteName"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="instituteImg" class="form-control">
+          <label for="instituteImg">Logo de instituto</label>
+          <input
+            type="text"
+            name="instituteImg"
+            [(ngModel)]="instituteImg"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="actualEdu" class="form-control">
+          <label for="actualEdu">¿La educación es actual?</label>
+          <select
+            #workEndModule
+            [(ngModel)]="actualEdu"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          >
+            <option *ngFor="let item of actualEduList" value="{{ item.value }}">
+              {{ item.text }}
+            </option>
+          </select>
+        </div>
+        <div id="eduStart" class="form-control">
+          <label for="eduStart">Inicio</label>
+          <input
+            type="date"
+            name="eduStart"
+            [(ngModel)]="eduStart"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="eduEnd" class="form-control">
+          <label for="eduEnd">Final</label>
+          <input
+            type="date"
+            name="eduEnd"
+            [(ngModel)]="eduEnd"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="form-buttons" class="form-control">
+          <input type="submit" value="Añadir" />
+          <button class="go-back" routerLink="">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

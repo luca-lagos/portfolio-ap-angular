@@ -1,0 +1,36 @@
+<section>
+  <div id="edit-skill-panel">
+    <div class="edit-skill-header">
+      <img src="/assets/images/header/ap-logo.webp" alt="" />
+    </div>
+    <div class="edit-skill-body">
+      <h2>Editar habilidad</h2>
+      <form #f="ngForm" (ngSubmit)="onEdit()" novalidate>
+        <div id="name" class="form-control">
+          <label for="name">Habilidad</label>
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="skill.name"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="percentage" class="form-control">
+          <label for="percentage">Porcentaje de saberes</label>
+          <input
+            type="number"
+            name="percentage"
+            [(ngModel)]="skill.percentage"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="form-buttons" class="form-control">
+          <input type="submit" value="Editar" />
+          <button class="go-back" routerLink="">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

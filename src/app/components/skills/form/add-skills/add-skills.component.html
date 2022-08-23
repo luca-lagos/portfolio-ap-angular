@@ -1,0 +1,36 @@
+<section>
+  <div id="add-skill-panel">
+    <div class="add-skill-header">
+      <img src="/assets/images/header/ap-logo.webp" alt="" />
+    </div>
+    <div class="add-skill-body">
+      <h2>Añadir habilidad</h2>
+      <form #f="ngForm" (ngSubmit)="onAdd()" novalidate>
+        <div id="name" class="form-control">
+          <label for="name">Habilidad</label>
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="name"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="percentage" class="form-control">
+          <label for="percentage">Porcentaje de saberes</label>
+          <input
+            type="number"
+            name="percentage"
+            [(ngModel)]="percentage"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="form-buttons" class="form-control">
+          <input type="submit" value="Añadir" />
+          <button class="go-back" routerLink="">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

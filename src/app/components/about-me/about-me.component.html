@@ -1,14 +1,22 @@
-<section id="about-me">
-    <div class="about-me-content">
-      <h1>Acerca de</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, eos
-        autem? Tenetur saepe repellat dicta dolore eos sint, quasi ducimus
-        error beatae corrupti delectus perferendis sapiente fugit temporibus
-        debitis sequi?
-      </p>
-    </div>
-    <a href="#" class="about-me-edit"
+<section id="about-me" *ngIf="isLogged == false && aboutMe.length > 0">
+  <div class="about-me-title">
+    <h1>Sobre mí</h1>
+  </div>
+  <div class="about-me-content" *ngFor="let a of aboutMe">
+    <p>
+      {{ a.description }}
+    </p>
+    <a href="edit-about-me/{{ a.id }}" class="about-me-edit"
       ><i class="fa-solid fa-pen-to-square"></i
     ></a>
-  </section>
+  </div>
+</section>
+<section id="about-me" *ngIf="isLogged == false && !aboutMe.length">
+  <div class="about-me-title">
+    <h1>Sobre mí</h1>
+  </div>
+  <a href="add-about-me" class="about-me-add-empty">
+    <i class="fa-solid fa-circle-plus"></i>
+    <p>Presiona aquí para crear una nueva descripción</p>
+  </a>
+</section>

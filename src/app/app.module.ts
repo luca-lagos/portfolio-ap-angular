@@ -27,6 +27,16 @@ import { RegisterComponent } from './components/register/register.component';
 import { RecoveryPasswordComponent } from './components/recovery-password/recovery-password.component';
 import { AddExperienceComponent } from './components/experience/form/add-experience/add-experience.component';
 import { EditExperienceComponent } from './components/experience/form/edit-experience/edit-experience.component';
+import { AddEducationComponent } from './components/education/form/add-education/add-education.component';
+import { EditEducationComponent } from './components/education/form/edit-education/edit-education.component';
+import { AddAboutMeComponent } from './components/about-me/form/add-about-me/add-about-me.component';
+import { EditAboutMeComponent } from './components/about-me/form/edit-about-me/edit-about-me.component';
+import { AddHomeComponent } from './components/home/form/add-home/add-home.component';
+import { EditHomeComponent } from './components/home/form/edit-home/edit-home.component';
+import { AddProjectsComponent } from './components/projects/form/add-projects/add-projects.component';
+import { EditProjectsComponent } from './components/projects/form/edit-projects/edit-projects.component';
+import { AddSkillsComponent } from './components/skills/form/add-skills/add-skills.component';
+import { EditSkillsComponent } from './components/skills/form/edit-skills/edit-skills.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +55,16 @@ import { EditExperienceComponent } from './components/experience/form/edit-exper
     RecoveryPasswordComponent,
     AddExperienceComponent,
     EditExperienceComponent,
+    AddEducationComponent,
+    EditEducationComponent,
+    AddAboutMeComponent,
+    EditAboutMeComponent,
+    AddHomeComponent,
+    EditHomeComponent,
+    AddProjectsComponent,
+    EditProjectsComponent,
+    AddSkillsComponent,
+    EditSkillsComponent,
   ],
   imports: [
     BrowserModule,

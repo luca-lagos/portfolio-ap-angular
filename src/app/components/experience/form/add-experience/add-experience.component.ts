@@ -62,18 +62,6 @@ export class AddExperienceComponent implements OnInit {
       this.actualWork
     );
     if (this.workStart !== this.workEnd) {
-      console.log(
-        this.jobName,
-        this.jobDescription,
-        this.businessName,
-        this.businessImg,
-        this.location,
-        this.countryLocation,
-        this.workTime,
-        this.workStart,
-        this.workEnd,
-        this.actualWork
-      );
       this.experienceService.save(experience).subscribe({
         next: (data) => {
           Swal.fire({

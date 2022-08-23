@@ -1,0 +1,27 @@
+<section>
+    <div id="edit-about-me-panel">
+      <div class="edit-about-me-header">
+        <img src="/assets/images/header/ap-logo.webp" alt="" />
+      </div>
+      <div class="edit-about-me-body">
+        <h2>Editar acerca de</h2>
+        <form #f="ngForm" (ngSubmit)="onEdit()" novalidate>
+          <div id="description" class="form-control">
+            <label for="description">Descripción</label>
+            <textarea
+              name="description"
+              cols="30"
+              rows="10"
+              [(ngModel)]="aboutMe.description"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            ></textarea>
+          </div>
+          <div id="form-buttons" class="form-control">
+            <input type="submit" value="Editar" />
+            <button class="go-back" routerLink="">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>

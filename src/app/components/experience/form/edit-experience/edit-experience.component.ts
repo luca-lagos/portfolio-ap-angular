@@ -114,23 +114,4 @@ export class EditExperienceComponent implements OnInit {
       this.workEndState = false;
     }
   }
-
-  goBack(): void {
-    Swal.fire({
-      title: 'Esta seguro?',
-      text: 'Perderás los datos ingresados',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Volver',
-      cancelButtonText: 'Cancelar',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.router.navigate(['']);
-      } else {
-        this.router.navigate(['/edit-experience/:id']);
-      }
-    });
-  }
 }

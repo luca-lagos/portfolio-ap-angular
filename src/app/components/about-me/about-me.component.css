@@ -2,10 +2,26 @@
   height: auto;
   margin: auto 150px 20px 150px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   border-radius: 5px;
   box-shadow: 0px 0px 10px 2px var(--background-home);
+}
+
+#about-me .about-me-title {
+  margin-left: 75px;
+  margin-right: 75px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#about-me .about-me-title h1 {
+  font-size: 25px;
+  font-weight: bold;
 }
 
 #about-me .about-me-content {
@@ -13,8 +29,8 @@
   margin-top: 25px;
   color: var(--navbar-background-color);
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: flex-start;
 }
 
@@ -30,12 +46,12 @@
   margin-bottom: 30px;
 }
 
-#about-me .about-me-edit {
-  margin-top: 20px;
-  margin-right: 75px;
+#about-me .about-me-content .about-me-edit {
   font-size: 20px;
+  margin-right: 75px;
+  margin-top: -75px;
   padding: 10px;
-  width: 48px;
+  width: 45px;
   text-align: center;
   border-radius: 50px;
   background-color: var(--button-color-active-home);
@@ -44,7 +60,40 @@
   transition: transform 200ms, box-shadow 200ms;
 }
 
-#about-me .about-me-edit:active {
+#about-me .about-me-content .about-me-edit:active {
   transform: translate(4px, 4px);
   box-shadow: 0px 0px 0px var(--button-color-home);
+}
+
+#about-me .about-me-add-empty{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--component-empty);
+  color: var(--text-color-title-home);
+  width: 400px;
+  height: 300px;
+  margin: auto;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 0px var(--text-color-title-home);
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+#about-me .about-me-add-empty:active{
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--text-color-title-home);
+}
+
+#about-me .about-me-add-empty i{
+  font-size: 125px;
+  margin-bottom: 20px;
+}
+
+#about-me .about-me-add-empty p{
+  font-size: 17px;
+  font-weight: bold;
 }

@@ -1,182 +1,53 @@
 <section id="skills">
   <div class="skills-title">
     <h1>Habilidades</h1>
-    <a href="#" class="skills-add"><i class="fa-solid fa-plus"></i></a>
+    <a
+      href="add-skill"
+      class="skills-add"
+      *ngIf="isLogged == false && skill.length > 0"
+      ><i class="fa-solid fa-plus"></i
+    ></a>
   </div>
-  <div class="skills-panel">
-    <div class="skills-panel-content">
-      <div>
-        <circle-progress
-          [percent]="90"
-          [maxPercent]="100"
-          [radius]="75"
-          [outerStrokeWidth]="12"
-          [innerStrokeWidth]="0"
-          [outerStrokeColor]="'#1670ec'"
-          [animation]="true"
-          [animationDuration]="300"
-          [title]="'HTML'"
-          [titleColor]="'#363636'"
-          [titleFontSize]="'1.7em'"
-          [titleFontWeight]="'bold'"
-          [subtitle]="'Nivel avanzado'"
-          [subtitleColor]="'#a7a6a6'"
-          [subtitleFontSize]="'0.8em'"
-          [subtitleFontWeight]="'bold'"
-          [showUnits]="false"
-        ></circle-progress>
-        <div class="skills-panel-edit">
-          <a href="#" class="skills-edit"
-            ><i class="fa-solid fa-pen-to-square"></i
-          ></a>
-          <a href="#" class="skills-delete"
-            ><i class="fa-solid fa-trash-can"></i
-          ></a>
-        </div>
-      </div>
-      <div>
-        <circle-progress
-          [percent]="90"
-          [maxPercent]="100"
-          [radius]="75"
-          [outerStrokeWidth]="12"
-          [innerStrokeWidth]="0"
-          [outerStrokeColor]="'#1670ec'"
-          [animation]="true"
-          [animationDuration]="300"
-          [title]="'HTML'"
-          [titleColor]="'#363636'"
-          [titleFontSize]="'1.7em'"
-          [titleFontWeight]="'bold'"
-          [subtitle]="'Nivel avanzado'"
-          [subtitleColor]="'#a7a6a6'"
-          [subtitleFontSize]="'0.8em'"
-          [subtitleFontWeight]="'bold'"
-          [showUnits]="false"
-        ></circle-progress>
-        <div class="skills-panel-edit">
-          <a href="#" class="skills-edit"
-            ><i class="fa-solid fa-pen-to-square"></i
-          ></a>
-          <a href="#" class="skills-delete"
-            ><i class="fa-solid fa-trash-can"></i
-          ></a>
-        </div>
-      </div>
-      <div>
-        <circle-progress
-          [percent]="90"
-          [maxPercent]="100"
-          [radius]="75"
-          [outerStrokeWidth]="12"
-          [innerStrokeWidth]="0"
-          [outerStrokeColor]="'#1670ec'"
-          [animation]="true"
-          [animationDuration]="300"
-          [title]="'HTML'"
-          [titleColor]="'#363636'"
-          [titleFontSize]="'1.7em'"
-          [titleFontWeight]="'bold'"
-          [subtitle]="'Nivel avanzado'"
-          [subtitleColor]="'#a7a6a6'"
-          [subtitleFontSize]="'0.8em'"
-          [subtitleFontWeight]="'bold'"
-          [showUnits]="false"
-        ></circle-progress>
-        <div class="skills-panel-edit">
-          <a href="#" class="skills-edit"
-            ><i class="fa-solid fa-pen-to-square"></i
-          ></a>
-          <a href="#" class="skills-delete"
-            ><i class="fa-solid fa-trash-can"></i
-          ></a>
-        </div>
-      </div>
-      <div>
-        <circle-progress
-          [percent]="90"
-          [maxPercent]="100"
-          [radius]="75"
-          [outerStrokeWidth]="12"
-          [innerStrokeWidth]="0"
-          [outerStrokeColor]="'#1670ec'"
-          [animation]="true"
-          [animationDuration]="300"
-          [title]="'HTML'"
-          [titleColor]="'#363636'"
-          [titleFontSize]="'1.7em'"
-          [titleFontWeight]="'bold'"
-          [subtitle]="'Nivel avanzado'"
-          [subtitleColor]="'#a7a6a6'"
-          [subtitleFontSize]="'0.8em'"
-          [subtitleFontWeight]="'bold'"
-          [showUnits]="false"
-        ></circle-progress>
-        <div class="skills-panel-edit">
-          <a href="#" class="skills-edit"
-            ><i class="fa-solid fa-pen-to-square"></i
-          ></a>
-          <a href="#" class="skills-delete"
-            ><i class="fa-solid fa-trash-can"></i
-          ></a>
-        </div>
-      </div>
-      <div>
-        <circle-progress
-          [percent]="90"
-          [maxPercent]="100"
-          [radius]="75"
-          [outerStrokeWidth]="12"
-          [innerStrokeWidth]="0"
-          [outerStrokeColor]="'#1670ec'"
-          [animation]="true"
-          [animationDuration]="300"
-          [title]="'HTML'"
-          [titleColor]="'#363636'"
-          [titleFontSize]="'1.7em'"
-          [titleFontWeight]="'bold'"
-          [subtitle]="'Nivel avanzado'"
-          [subtitleColor]="'#a7a6a6'"
-          [subtitleFontSize]="'0.8em'"
-          [subtitleFontWeight]="'bold'"
-          [showUnits]="false"
-        ></circle-progress>
-        <div class="skills-panel-edit">
-          <a href="#" class="skills-edit"
-            ><i class="fa-solid fa-pen-to-square"></i
-          ></a>
-          <a href="#" class="skills-delete"
-            ><i class="fa-solid fa-trash-can"></i
-          ></a>
-        </div>
-      </div>
-      <div>
-        <circle-progress
-          [percent]="90"
-          [maxPercent]="100"
-          [radius]="75"
-          [outerStrokeWidth]="12"
-          [innerStrokeWidth]="0"
-          [outerStrokeColor]="'#1670ec'"
-          [animation]="true"
-          [animationDuration]="300"
-          [title]="'HTML'"
-          [titleColor]="'#363636'"
-          [titleFontSize]="'1.7em'"
-          [titleFontWeight]="'bold'"
-          [subtitle]="'Nivel avanzado'"
-          [subtitleColor]="'#a7a6a6'"
-          [subtitleFontSize]="'0.8em'"
-          [subtitleFontWeight]="'bold'"
-          [showUnits]="false"
-        ></circle-progress>
-        <div class="skills-panel-edit">
-          <a href="#" class="skills-edit"
-            ><i class="fa-solid fa-pen-to-square"></i
-          ></a>
-          <a href="#" class="skills-delete"
-            ><i class="fa-solid fa-trash-can"></i
-          ></a>
+  <div *ngIf="isLogged == false && !skill.length">
+    <a href="add-skill" class="skill-add-empty">
+      <i class="fa-solid fa-circle-plus"></i>
+      <p>Presiona aquí para crear una nueva habilidad</p>
+    </a>
+  </div>
+  <div *ngIf="isLogged == false && skill.length > 0">
+    <div class="skills-panel">
+      <div class="skills-panel-content">
+        <div *ngFor="let s of skill">
+          <circle-progress
+            [percent]="s.percentage"
+            [maxPercent]="100"
+            [radius]="75"
+            [outerStrokeWidth]="12"
+            [innerStrokeWidth]="0"
+            [outerStrokeColor]="'#1670ec'"
+            [animation]="true"
+            [animationDuration]="300"
+            [title]="s.name"
+            [titleColor]="'#363636'"
+            [titleFontSize]="'1.2em'"
+            [titleFontWeight]="'bold'"
+            [subtitleFormat]="formatSubtitle"
+            [subtitleColor]="'#a7a6a6'"
+            [subtitleFontSize]="'0.8em'"
+            [subtitleFontWeight]="'bold'"
+            [showUnits]="false"
+          ></circle-progress>
+          <div class="skills-panel-edit">
+            <a href="edit-skill/{{ s.id }}" class="skills-edit"
+              ><i class="fa-solid fa-pen-to-square"></i
+            ></a>
+            <a
+              style="cursor: pointer"
+              class="skills-delete"
+              (click)="onDelete(s.id)"
+              ><i class="fa-solid fa-trash-can"></i
+            ></a>
+          </div>
         </div>
       </div>
     </div>

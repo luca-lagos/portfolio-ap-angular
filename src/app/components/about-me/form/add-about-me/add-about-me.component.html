@@ -1,0 +1,27 @@
+<section>
+  <div id="add-about-me-panel">
+    <div class="add-about-me-header">
+      <img src="/assets/images/header/ap-logo.webp" alt="" />
+    </div>
+    <div class="add-about-me-body">
+      <h2>Añadir descripción</h2>
+      <form #f="ngForm" (ngSubmit)="onAdd()" novalidate>
+        <div id="description" class="form-control">
+          <label for="description">Descripción</label>
+          <textarea
+            name="description"
+            cols="30"
+            rows="10"
+            [(ngModel)]="description"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          ></textarea>
+        </div>
+        <div id="form-buttons" class="form-control">
+          <input type="submit" value="Añadir" />
+          <button class="go-back" routerLink="">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

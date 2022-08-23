@@ -1,24 +1,47 @@
 <section id="education">
-    <div class="education-title">
-      <h1>Educación</h1>
-      <a href="#" class="education-add"><i class="fa-solid fa-plus"></i></a>
-    </div>
-    <div class="education-panel">
+  <div class="education-title">
+    <h1>Educación</h1>
+    <a
+      href="#"
+      class="education-add"
+      *ngIf="isLogged == false && education.length > 0"
+      ><i class="fa-solid fa-plus"></i
+    ></a>
+  </div>
+  <div *ngIf="isLogged == false && !education.length">
+    <a href="add-education" class="education-add-empty">
+      <i class="fa-solid fa-circle-plus"></i>
+      <p>Presiona aquí para crear una nueva educación</p>
+    </a>
+  </div>
+  <div *ngIf="isLogged == false && education.length > 0">
+    <div class="education-panel" *ngFor="let e of education">
       <div class="education-panel-content">
-        <img src="assets/images/home/unm-logo.webp" alt="" />
+        <img src="{{ e.instituteImg }}" alt="" />
         <div class="education-panel-text">
-          <h1>Abogacía</h1>
-          <h2>University of New Mexico</h2>
-          <h3>1991 - 1994</h3>
+          <h1>{{ e.title }}</h1>
+          <h2>{{ e.instituteName }}</h2>
+          <h3 class="date-format" *ngIf="e.actualEdu === true">
+            {{ e.eduStart | date: "MMMM, yyyy" }} - Actualidad
+          </h3>
+          <h3 class="date-format" *ngIf="e.actualEdu === false">
+            {{ e.eduStart | date: "MMMM, yyyy" }} -
+            {{ e.eduEnd | date: "MMMM, yyyy" }}
+          </h3>
         </div>
       </div>
       <div class="education-panel-edit">
-        <a href="#" class="experience-edit"
+        <a href="edit-education/{{ e.id }}" class="education-edit"
           ><i class="fa-solid fa-pen-to-square"></i
         ></a>
-        <a href="#" class="experience-delete"
+        <a
+          href="#"
+          class="education-delete"
+          style="cursor: pointer"
+          (click)="onDelete(e.id)"
           ><i class="fa-solid fa-trash-can"></i
         ></a>
       </div>
     </div>
-  </section>
+  </div>
+</section>

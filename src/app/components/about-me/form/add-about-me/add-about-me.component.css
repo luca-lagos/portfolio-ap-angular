@@ -1,0 +1,192 @@
+section {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.disable {
+  display: none;
+}
+
+#add-about-me-panel {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 768px;
+  height: auto;
+  box-shadow: 0px 0px 10px 2px var(--background-home);
+  border-radius: 5px;
+}
+
+#add-about-me-panel .add-about-me-header {
+  background-color: var(--info-color-home);
+  width: 100%;
+  text-align: center;
+  height: 200px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#add-about-me-panel .add-about-me-header img {
+  width: 375px;
+  margin-top: -20px;
+}
+
+#add-about-me-panel .add-about-me-body {
+  width: 768px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#add-about-me-panel .add-about-me-body h2 {
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 25px;
+  background-color: var(--info-color-active-home);
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+#add-about-me-panel .add-about-me-body form {
+  width: 718px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-template-areas:
+    "description description description"
+    "formButtons formButtons formButtons";
+  grid-gap: 0.8rem;
+}
+
+#add-about-me-panel .add-about-me-body form #description {
+  grid-area: description;
+}
+
+#add-about-me-panel .add-about-me-body .form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+#add-about-me-panel .add-about-me-body .form-control label {
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--text-color-subtitle-home);
+  margin-bottom: 5px;
+}
+
+#add-about-me-panel .add-about-me-body .form-control input {
+  padding: 3px 10px 3px 10px;
+  margin-bottom: 13px;
+  border: 0;
+  border-bottom: 2px solid var(--background-home);
+  font-size: 14px;
+  transition: all 0.4s ease;
+}
+
+#add-about-me-panel .add-about-me-body .form-control textarea {
+  padding: 10px;
+  margin-bottom: 13px;
+  border: 0;
+  border: 2px solid var(--background-home);
+  font-size: 14px;
+  transition: all 0.4s ease;
+}
+
+#add-about-me-panel .add-about-me-body .form-control select {
+  padding: 3px 10px 3px 10px;
+  margin-top: -2px;
+  margin-bottom: 13px;
+  border: 0;
+  border-bottom: 2px solid var(--background-home);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+#add-about-me-panel .add-about-me-body .form-control input[type="date"] {
+  margin-top: -2px;
+}
+
+#add-about-me-panel .add-about-me-body .form-control .disable-work-end {
+  pointer-events: none;
+}
+
+#add-about-me-panel .add-about-me-body .form-control select:active,
+#add-about-me-panel .add-about-me-body .form-control select:focus {
+  outline: none;
+  border-bottom: 2px solid var(--info-color-active-home);
+}
+
+#add-experience-panel .add-experience-body .form-control input:active,
+#add-about-me-panel .add-about-me-body .form-control input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--info-color-active-home);
+}
+
+#add-about-me-panel .add-about-me-body .form-control textarea:active,
+#add-about-me-panel .add-about-me-body .form-control textarea:focus {
+  outline: none;
+  border: 2px solid var(--info-color-active-home);
+}
+
+#add-about-me-panel .add-about-me-body .form-control input:last-child {
+  margin-bottom: 25px;
+}
+
+#add-about-me-panel .add-about-me-body #form-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  grid-area: formButtons;
+  margin-bottom: 10px;
+}
+
+#add-about-me-panel .add-about-me-body #form-buttons input {
+  width: 250px;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 2px;
+  background-color: var(--button-color-active-home);
+  color: white;
+  box-shadow: 4px 4px 0px var(--button-color-home);
+  cursor: pointer;
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+#add-about-me-panel .add-about-me-body #form-buttons input:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--button-color-home);
+}
+
+#add-about-me-panel .add-about-me-body #form-buttons button {
+  width: 250px;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 2px;
+  background-color: var(--button-color-active-danger);
+  color: white;
+  box-shadow: 4px 4px 0px var(--button-color-danger);
+  cursor: pointer;
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+#add-about-me-panel .add-about-me-body #form-buttons button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--button-color-danger);
+}

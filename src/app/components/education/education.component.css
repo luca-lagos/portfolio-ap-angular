@@ -39,6 +39,39 @@
     transform: translate(4px, 4px);
     box-shadow: 0px 0px 0px var(--button-color-home);
   }
+
+  #education .education-add-empty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--component-empty);
+    color: var(--text-color-title-home);
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 0px var(--text-color-title-home);
+    transition: transform 200ms, box-shadow 200ms;
+  }
+  
+  #education .education-add-empty:active{
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px var(--text-color-title-home);
+  }
+  
+  #education .education-add-empty i{
+    font-size: 125px;
+    margin-bottom: 20px;
+  }
+  
+  #education .education-add-empty p{
+    font-size: 17px;
+    font-weight: bold;
+  }
   
   #education .education-panel {
     display: flex;

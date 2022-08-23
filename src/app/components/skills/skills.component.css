@@ -40,6 +40,39 @@
   box-shadow: 0px 0px 0px var(--button-color-home);
 }
 
+#skills .skill-add-empty{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--component-empty);
+  color: var(--text-color-title-home);
+  width: 400px;
+  height: 300px;
+  margin: auto;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 0px var(--text-color-title-home);
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+#skills .skill-add-empty:active{
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--text-color-title-home);
+}
+
+#skills .skill-add-empty i{
+  font-size: 125px;
+  margin-bottom: 20px;
+}
+
+#skills .skill-add-empty p{
+  font-size: 17px;
+  font-weight: bold;
+}
+
 #skills .skills-panel {
   display: flex;
   justify-content: center;
