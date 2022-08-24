@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ExperienceService {
-  experienceURL: string = 'http://localhost:8080/experience';
+  experienceURL: string = 'https://backend-ap-luca-lagos.herokuapp.com/experience';
   constructor(private httpClient: HttpClient) {}
   public list(): Observable<Experience[]> {
     return this.httpClient.get<Experience[]>(this.experienceURL + '/list');

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class EducationService {
-  educationURL: string = 'http://localhost:8080/education';
+  educationURL: string = 'https://backend-ap-luca-lagos.herokuapp.com/education';
   constructor(private httpClient: HttpClient) {}
   public list(): Observable<Education[]> {
     return this.httpClient.get<Education[]>(this.educationURL + '/list');

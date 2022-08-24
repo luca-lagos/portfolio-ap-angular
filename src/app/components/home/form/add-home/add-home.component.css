@@ -1,0 +1,220 @@
+section {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.disable {
+  display: none;
+}
+
+#add-home-panel {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 768px;
+  height: auto;
+  box-shadow: 0px 0px 10px 2px var(--background-home);
+  border-radius: 5px;
+}
+
+#add-home-panel .add-home-header {
+  background-color: var(--info-color-home);
+  width: 100%;
+  text-align: center;
+  height: 200px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#add-home-panel .add-home-header img {
+  width: 375px;
+  margin-top: -20px;
+}
+
+#add-home-panel .add-home-body {
+  width: 768px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#add-home-panel .add-home-body h2 {
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 25px;
+  background-color: var(--info-color-active-home);
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+#add-home-panel .add-home-body form {
+  width: 718px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  grid-template-rows: 0.2fr 0.2fr;
+  grid-template-areas:
+    "name lastname"
+    "profession profession"
+    "location countryLocation"
+    "userProfileImg userBackgroundImg"
+    "formButtons formButtons";
+  grid-gap: 0.8rem;
+}
+
+#add-home-panel .add-home-body form #name {
+  grid-area: name;
+}
+
+#add-home-panel .add-home-body form #lastname {
+  grid-area: lastname;
+}
+
+#add-home-panel .add-home-body form #profession {
+  grid-area: profession;
+}
+
+#add-home-panel .add-home-body form #location {
+  grid-area: location;
+}
+
+#add-home-panel .add-home-body form #countryLocation {
+  grid-area: countryLocation;
+}
+
+#add-home-panel .add-home-body form #userProfileImg {
+  grid-area: userProfileImg;
+}
+
+#add-home-panel .add-home-body form #userBackgroundImg {
+  grid-area: userBackgroundImg;
+}
+
+#add-home-panel .add-home-body .form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+#add-home-panel .add-home-body .form-control label {
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--text-color-subtitle-home);
+  margin-bottom: 5px;
+}
+
+#add-home-panel .add-home-body .form-control input {
+  padding: 3px 10px 3px 10px;
+  margin-bottom: 13px;
+  border: 0;
+  border-bottom: 2px solid var(--background-home);
+  font-size: 14px;
+  transition: all 0.4s ease;
+}
+
+#add-home-panel .add-home-body .form-control textarea {
+  padding: 10px;
+  margin-bottom: 13px;
+  border: 0;
+  border: 2px solid var(--background-home);
+  font-size: 14px;
+  transition: all 0.4s ease;
+}
+
+#add-home-panel .add-home-body .form-control select {
+  padding: 3px 10px 3px 10px;
+  margin-top: -2px;
+  margin-bottom: 13px;
+  border: 0;
+  border-bottom: 2px solid var(--background-home);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+#add-home-panel .add-home-body .form-control input[type="date"] {
+  margin-top: -2px;
+}
+
+#add-home-panel .add-home-body .form-control .disable-work-end {
+  pointer-events: none;
+}
+
+#add-home-panel .add-home-body .form-control select:active,
+#add-home-panel .add-home-body .form-control select:focus {
+  outline: none;
+  border-bottom: 2px solid var(--info-color-active-home);
+}
+
+#add-home-panel .add-home-body .form-control input:active,
+#add-home-panel .add-home-body .form-control input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--info-color-active-home);
+}
+
+#add-home-panel .add-home-body .form-control textarea:active,
+#add-home-panel .add-home-body .form-control textarea:focus {
+  outline: none;
+  border: 2px solid var(--info-color-active-home);
+}
+
+#add-home-panel .add-home-body .form-control input:last-child {
+  margin-bottom: 25px;
+}
+
+#add-home-panel .add-home-body #form-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  grid-area: formButtons;
+  margin-bottom: 10px;
+}
+
+#add-home-panel .add-home-body #form-buttons input {
+  width: 250px;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 2px;
+  background-color: var(--button-color-active-home);
+  color: white;
+  box-shadow: 4px 4px 0px var(--button-color-home);
+  cursor: pointer;
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+#add-home-panel .add-home-body #form-buttons input:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--button-color-home);
+}
+
+#add-home-panel .add-home-body #form-buttons button {
+  width: 250px;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 2px;
+  background-color: var(--button-color-active-danger);
+  color: white;
+  box-shadow: 4px 4px 0px var(--button-color-danger);
+  cursor: pointer;
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+#add-home-panel .add-home-body #form-buttons button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--button-color-danger);
+}

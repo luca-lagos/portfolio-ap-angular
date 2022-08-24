@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AboutMeService {
-  aboutMeURL: string = 'http://localhost:8080/about-me';
+  aboutMeURL: string = 'https://backend-ap-luca-lagos.herokuapp.com/about-me';
   constructor(private httpClient: HttpClient) {}
   public list(): Observable<AboutMe[]> {
     return this.httpClient.get<AboutMe[]>(this.aboutMeURL + '/list');

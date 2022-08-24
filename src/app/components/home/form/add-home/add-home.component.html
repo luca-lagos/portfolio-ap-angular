@@ -1,1 +1,86 @@
-<p>add-home works!</p>
+<section>
+  <div id="add-home-panel">
+    <div class="add-home-header">
+      <img src="/assets/images/header/ap-logo.webp" alt="" />
+    </div>
+    <div class="add-home-body">
+      <h2>Añadir datos personales</h2>
+      <form #f="ngForm" (ngSubmit)="onAdd()" novalidate>
+        <div id="name" class="form-control">
+          <label for="name">Nombre</label>
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="name"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="lastname" class="form-control">
+          <label for="lastname">Apellido</label>
+          <input
+            type="text"
+            name="lastname"
+            [(ngModel)]="lastname"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="profession" class="form-control">
+          <label for="profession">Profesión</label>
+          <input
+            type="text"
+            name="profession"
+            [(ngModel)]="profession"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="location" class="form-control">
+          <label for="location">Dirección</label>
+          <input
+            type="text"
+            name="location"
+            [(ngModel)]="location"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="countryLocation" class="form-control">
+          <label for="countryLocation">Pais</label>
+          <input
+            type="text"
+            name="countryLocation"
+            [(ngModel)]="countryLocation"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="userProfileImg" class="form-control">
+          <label for="userProfileImg">Imagen de perfil</label>
+          <input
+            type="text"
+            name="userProfileImg"
+            [(ngModel)]="userProfileImg"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="userBackgroundImg" class="form-control">
+          <label for="userBackgroundImg">Imagen de fondo</label>
+          <input
+            type="text"
+            name="userBackgroundImg"
+            [(ngModel)]="userBackgroundImg"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="form-buttons" class="form-control">
+          <input type="submit" value="Añadir" />
+          <button class="go-back" routerLink="">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

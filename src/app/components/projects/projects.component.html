@@ -1,69 +1,74 @@
 <section id="projects">
   <div class="projects-title">
     <h1>Proyectos</h1>
-    <a href="#" class="projects-add"><i class="fa-solid fa-plus"></i></a>
+    <a
+      href="add-project"
+      class="projects-add"
+      *ngIf="isLogged == true && project.length > 0"
+      ><i class="fa-solid fa-plus"></i
+    ></a>
   </div>
-  <div class="projects-panel">
-    <div class="projects-panel-content">
-      <h1>Angular CRUD</h1>
-      <h2>Feb 2022 - Jun 2022</h2>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
-        accusantium quae assumenda facere, corrupti nobis. Aut repellat cum
-        saepe, dolorem deserunt reprehenderit? Reiciendis, accusantium itaque
-        perferendis quisquam odio nesciunt voluptates.
-      </p>
-      <a href="#">Link del proyecto <i class="fa-solid fa-link"></i></a>
-    </div>
-    <div class="projects-panel-edit">
-      <a href="#" class="projects-edit"
-        ><i class="fa-solid fa-pen-to-square"></i
-      ></a>
-      <a href="#" class="projects-delete"
-        ><i class="fa-solid fa-trash-can"></i
-      ></a>
+  <div *ngIf="isLogged == false && !project.length">
+    <div class="project-empty-logout">
+      <i class="fa-solid fa-face-flushed"></i>
+      <p>Aún no se han encontrado proyectos.</p>
     </div>
   </div>
-  <div class="projects-panel">
-    <div class="projects-panel-content">
-      <h1>Angular CRUD</h1>
-      <h2>Feb 2022 - Jun 2022</h2>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
-        accusantium quae assumenda facere, corrupti nobis. Aut repellat cum
-        saepe, dolorem deserunt reprehenderit? Reiciendis, accusantium itaque
-        perferendis quisquam odio nesciunt voluptates.
-      </p>
-      <a href="#">Link del proyecto <i class="fa-solid fa-link"></i></a>
-    </div>
-    <div class="projects-panel-edit">
-      <a href="#" class="projects-edit"
-        ><i class="fa-solid fa-pen-to-square"></i
-      ></a>
-      <a href="#" class="projects-delete"
-        ><i class="fa-solid fa-trash-can"></i
-      ></a>
+  <div *ngIf="isLogged == true && !project.length">
+    <a href="add-project" class="project-add-empty">
+      <i class="fa-solid fa-circle-plus"></i>
+      <p>Presiona aquí para crear un nuevo proyecto</p>
+    </a>
+  </div>
+  <div *ngIf="isLogged == false && project.length > 0">
+    <div class="projects-panel" *ngFor="let p of project">
+      <div class="projects-panel-content">
+        <h1>{{ p.title }}</h1>
+        <h2 class="date-format" *ngIf="p.actualProject === true">
+          {{ p.projectStart | date: "MMMM, yyyy" }} - Actualidad
+        </h2>
+        <h2 class="date-format" *ngIf="p.actualProject === false">
+          {{ p.projectStart | date: "MMMM, yyyy" }} -
+          {{ p.projectEnd | date: "MMMM, yyyy" }}
+        </h2>
+        <p>
+          {{ p.description }}
+        </p>
+        <a href="{{ p.linkWeb }}" target="_blank"
+          >Link del proyecto <i class="fa-solid fa-link"></i
+        ></a>
+      </div>
     </div>
   </div>
-  <div class="projects-panel">
-    <div class="projects-panel-content">
-      <h1>Angular CRUD</h1>
-      <h2>Feb 2022 - Jun 2022</h2>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
-        accusantium quae assumenda facere, corrupti nobis. Aut repellat cum
-        saepe, dolorem deserunt reprehenderit? Reiciendis, accusantium itaque
-        perferendis quisquam odio nesciunt voluptates.
-      </p>
-      <a href="#">Link del proyecto <i class="fa-solid fa-link"></i></a>
-    </div>
-    <div class="projects-panel-edit">
-      <a href="#" class="projects-edit"
-        ><i class="fa-solid fa-pen-to-square"></i
-      ></a>
-      <a href="#" class="projects-delete"
-        ><i class="fa-solid fa-trash-can"></i
-      ></a>
+  <div *ngIf="isLogged == true && project.length > 0">
+    <div class="projects-panel" *ngFor="let p of project">
+      <div class="projects-panel-content">
+        <h1>{{ p.title }}</h1>
+        <h2 class="date-format" *ngIf="p.actualProject === true">
+          {{ p.projectStart | date: "MMMM, yyyy" }} - Actualidad
+        </h2>
+        <h2 class="date-format" *ngIf="p.actualProject === false">
+          {{ p.projectStart | date: "MMMM, yyyy" }} -
+          {{ p.projectEnd | date: "MMMM, yyyy" }}
+        </h2>
+        <p>
+          {{ p.description }}
+        </p>
+        <a href="{{ p.linkWeb }}" target="_blank"
+          >Link del proyecto <i class="fa-solid fa-link"></i
+        ></a>
+      </div>
+      <div class="projects-panel-edit">
+        <a href="edit-project/{{ p.id }}" class="projects-edit"
+          ><i class="fa-solid fa-pen-to-square"></i
+        ></a>
+        <a
+          style="cursor: pointer"
+          (click)="onDelete(p.id)"
+          class="projects-delete"
+          ><i class="fa-solid fa-trash-can"></i
+        ></a>
+      </div>
     </div>
   </div>
 </section>

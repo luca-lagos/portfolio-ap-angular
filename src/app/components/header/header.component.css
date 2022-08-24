@@ -17,6 +17,7 @@ nav {
 nav img {
   width: 75px;
   height: auto;
+  margin-left: -17px;
 }
 
 nav .nav-social-media {
@@ -28,7 +29,7 @@ nav .nav-social-media {
 
 nav .nav-social-media div {
   margin-right: 40px;
-  width: 225px;
+  width: 150px;
   display: flex;
   justify-content: space-around;
 }

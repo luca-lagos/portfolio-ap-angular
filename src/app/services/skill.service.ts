@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class SkillService {
-  skillURL: string = 'http://localhost:8080/skill';
+  skillURL: string = 'https://backend-ap-luca-lagos.herokuapp.com/skill';
   constructor(private httpClient: HttpClient) {}
   public list(): Observable<Skill[]> {
     return this.httpClient.get<Skill[]>(this.skillURL + '/list');

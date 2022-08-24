@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../models/user.model';
+import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +9,28 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  user: User = new User('', '', '');
+  user: User[] = [];
 
-  constructor(public userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private tokenService: TokenService
+  ) {}
+
+  isLogged = false;
 
   ngOnInit(): void {
-    this.userService.GetUsers().subscribe((user) => {
-      this.user = user;
+    this.listUser();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
+
+  listUser(): void {
+    this.userService.list().subscribe((data) => {
+      this.user = data;
+      console.log(this.user);
     });
   }
 }

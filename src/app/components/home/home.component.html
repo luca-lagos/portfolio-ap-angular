@@ -1,37 +1,87 @@
 <section id="home">
-    <div class="home-profile">
-      <div class="home-profile-background">
-        <img src="assets/images/home/profile-background.webp" alt="" />
+  <div *ngIf="isLogged == true && !user.length">
+    <div class="home-title">
+      <h1>Datos personales</h1>
+    </div>
+    <a href="add-user" class="home-add-empty">
+      <i class="fa-solid fa-circle-plus"></i>
+      <p>Presiona aquí para añadir tus datos personales</p>
+    </a>
+  </div>
+  <div *ngIf="isLogged == false && !user.length">
+    <div class="home-title">
+      <h1>Datos personales</h1>
+    </div>
+    <div class="home-empty-logout">
+      <i class="fa-solid fa-face-flushed"></i>
+      <p>Aún no se han encontrado datos personales.</p>
+    </div>
+  </div>
+  <div *ngIf="isLogged == true && user.length > 0">
+    <div *ngFor="let u of user">
+      <div class="home-profile">
+        <div class="home-profile-background">
+          <img src="{{ u.userBackgroundImg }}" alt="" />
+        </div>
+        <div class="home-profile-content">
+          <img src="{{ u.userProfileImg }}" alt="" />
+          <a href="edit-user/{{ u.id }}" class="home-edit"
+            ><i class="fa-solid fa-pen-to-square"></i
+          ></a>
+        </div>
       </div>
-      <div class="home-profile-content">
-        <img src="assets/images/home/profile-img.webp" alt="" />
-        <a href="#" class="home-edit"
-          ><i class="fa-solid fa-pen-to-square"></i
-        ></a>
+      <div class="home-data">
+        <div class="home-data-contact">
+          <h1 id="complete-name">{{ u.name }} {{ u.lastname }}</h1>
+          <h2>{{ u.profession }}</h2>
+          <p>
+            {{ u.location }}, {{ u.countryLocation }}
+            <!--<a href="#">Información de contacto</a>-->
+          </p>
+        </div>
+        <!--<div class="home-data-jobs">
+            <div>
+              <img src="assets/images/home/usa-gov-logo.webp" alt="" />
+              <p>USA Government</p>
+            </div>
+            <div>
+              <img src="assets/images/home/unm-logo.webp" alt="" />
+              <p>University of New Mexico</p>
+            </div>
+          </div>-->
       </div>
     </div>
-    <div class="home-data">
-      <div class="home-data-contact">
-        <h1 id="complete-name">{{user.name}} {{user.lastname}}</h1>
-        <h2>Abogado</h2>
-        <p>
-          Albuquerque, Estados Unidos <!--<a href="#">Información de contacto</a>-->
-        </p>
+  </div>
+  <div *ngIf="isLogged == false && user.length > 0">
+    <div *ngFor="let u of user">
+      <div class="home-profile">
+        <div class="home-profile-background">
+          <img src="{{ u.userBackgroundImg }}" alt="" />
+        </div>
+        <div class="home-profile-content">
+          <img src="{{ u.userProfileImg }}" alt="" />
+        </div>
       </div>
-      <!--<div class="home-data-jobs">
-        <div>
-          <img src="assets/images/home/usa-gov-logo.webp" alt="" />
-          <p>USA Government</p>
+      <div class="home-data">
+        <div class="home-data-contact">
+          <h1 id="complete-name">{{ u.name }} {{ u.lastname }}</h1>
+          <h2>{{ u.profession }}</h2>
+          <p>
+            {{ u.location }}, {{ u.countryLocation }}
+            <!--<a href="#">Información de contacto</a>-->
+          </p>
         </div>
-        <div>
-          <img src="assets/images/home/unm-logo.webp" alt="" />
-          <p>University of New Mexico</p>
-        </div>
-      </div>-->
+        <!--<div class="home-data-jobs">
+            <div>
+              <img src="assets/images/home/usa-gov-logo.webp" alt="" />
+              <p>USA Government</p>
+            </div>
+            <div>
+              <img src="assets/images/home/unm-logo.webp" alt="" />
+              <p>University of New Mexico</p>
+            </div>
+          </div>-->
+      </div>
     </div>
-    <!--<div class="home-buttons">
-      <a href="#">Tengo interés en</a>
-      <a href="#">Añadir Sección</a>
-      <a href="#">Más</a>
-    </div>-->
-  </section>
+  </div>
+</section>

@@ -1,1 +1,86 @@
-<p>edit-home works!</p>
+<section>
+  <div id="edit-home-panel">
+    <div class="edit-home-header">
+      <img src="/assets/images/header/ap-logo.webp" alt="" />
+    </div>
+    <div class="edit-home-body">
+      <h2>Editar datos personales</h2>
+      <form #f="ngForm" (ngSubmit)="onEdit()" novalidate>
+        <div id="name" class="form-control">
+          <label for="name">Nombre</label>
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="user.name"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="lastname" class="form-control">
+          <label for="lastname">Apellido</label>
+          <input
+            type="text"
+            name="lastname"
+            [(ngModel)]="user.lastname"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="profession" class="form-control">
+          <label for="profession">Profesión</label>
+          <input
+            type="text"
+            name="profession"
+            [(ngModel)]="user.profession"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="location" class="form-control">
+          <label for="location">Dirección</label>
+          <input
+            type="text"
+            name="location"
+            [(ngModel)]="user.location"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="countryLocation" class="form-control">
+          <label for="countryLocation">Pais</label>
+          <input
+            type="text"
+            name="countryLocation"
+            [(ngModel)]="user.countryLocation"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="userProfileImg" class="form-control">
+          <label for="userProfileImg">Imagen de perfil</label>
+          <input
+            type="text"
+            name="userProfileImg"
+            [(ngModel)]="user.userProfileImg"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="userBackgroundImg" class="form-control">
+          <label for="userBackgroundImg">Imagen de fondo</label>
+          <input
+            type="text"
+            name="userBackgroundImg"
+            [(ngModel)]="user.userBackgroundImg"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="form-buttons" class="form-control">
+          <input type="submit" value="Editar" />
+          <button class="go-back" routerLink="">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

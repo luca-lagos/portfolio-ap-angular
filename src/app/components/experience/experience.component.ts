@@ -66,7 +66,7 @@ export class ExperienceComponent implements OnInit {
 
               Toast.fire({
                 icon: 'success',
-                title: 'La educación ha sido eliminada correctamente',
+                title: 'La experiencia ha sido eliminada correctamente',
               });
             },
             error: (err) => {

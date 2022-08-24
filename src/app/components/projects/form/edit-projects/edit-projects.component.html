@@ -1,1 +1,83 @@
-<p>edit-projects works!</p>
+<section>
+  <div id="edit-project-panel">
+    <div class="edit-project-header">
+      <img src="/assets/images/header/ap-logo.webp" alt="" />
+    </div>
+    <div class="edit-project-body">
+      <h2>Editar proyecto</h2>
+      <form #f="ngForm" (ngSubmit)="onEdit()" novalidate>
+        <div id="title" class="form-control">
+          <label for="title">Título</label>
+          <input
+            type="text"
+            name="title"
+            [(ngModel)]="project.title"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="linkWeb" class="form-control">
+          <label for="linkWeb">Link del proyecto</label>
+          <input
+            type="text"
+            name="linkWeb"
+            [(ngModel)]="project.linkWeb"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="description" class="form-control">
+          <label for="description">Descripción</label>
+          <textarea
+            name="description"
+            cols="30"
+            rows="10"
+            [(ngModel)]="project.description"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          ></textarea>
+        </div>
+        <div id="projectStart" class="form-control">
+          <label for="projectStart">Inicio</label>
+          <input
+            type="date"
+            name="projectStart"
+            [(ngModel)]="project.projectStart"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="actualProject" class="form-control">
+          <label for="actualProject">¿El proyecto es actual?</label>
+          <select
+            #workEndModule
+            [(ngModel)]="project.actualProject"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          >
+            <option
+              *ngFor="let item of actualProjectList"
+              value="{{ item.value }}"
+            >
+              {{ item.text }}
+            </option>
+          </select>
+        </div>
+        <div id="projectEnd" class="form-control">
+          <label for="projectEnd">Final</label>
+          <input
+            type="date"
+            name="projectEnd"
+            [(ngModel)]="project.projectEnd"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div id="form-buttons" class="form-control">
+          <input type="submit" value="Editar" />
+          <button class="go-back" routerLink="">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

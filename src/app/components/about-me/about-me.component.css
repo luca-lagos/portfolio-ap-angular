@@ -24,6 +24,28 @@
   font-weight: bold;
 }
 
+#about-me .about-me-empty-logout{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+#about-me .about-me-empty-logout i{
+  font-size: 150px;
+  color: var(--text-color-subtitle-home);
+  margin-bottom: 25px;  
+}
+
+#about-me .about-me-empty-logout p{
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-color-title-home);
+  width: 250px;
+}
+
 #about-me .about-me-content {
   margin-left: 75px;
   margin-top: 25px;

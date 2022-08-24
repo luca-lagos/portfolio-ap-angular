@@ -40,6 +40,29 @@
     box-shadow: 0px 0px 0px var(--button-color-home);
   }
 
+  #education .education-empty-logout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  
+  #education .education-empty-logout i{
+    font-size: 150px;
+    color: var(--text-color-subtitle-home);
+    margin-bottom: 25px;  
+  }
+  
+  #education .education-empty-logout p{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color-title-home);
+    width: 250px;
+  }
+
   #education .education-add-empty{
     display: flex;
     flex-direction: column;
@@ -120,6 +143,10 @@
 
   #education .education-panel .education-panel-content div h3:last-child {
    margin-bottom: 20px;
+  }
+
+  #education .education-panel .education-panel-content div h3.date-format {
+    text-transform: capitalize;
   }
   
   #education .education-panel .education-panel-edit{

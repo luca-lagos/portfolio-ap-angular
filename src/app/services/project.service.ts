@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProjectService {
-  projectURL: string = 'http://localhost:8080/project';
+  projectURL: string = 'https://backend-ap-luca-lagos.herokuapp.com/project';
   constructor(private httpClient: HttpClient) {}
   public list(): Observable<Project[]> {
     return this.httpClient.get<Project[]>(this.projectURL + '/list');

@@ -2,19 +2,43 @@
   <div class="education-title">
     <h1>Educación</h1>
     <a
-      href="#"
+      href="add-education"
       class="education-add"
-      *ngIf="isLogged == false && education.length > 0"
+      *ngIf="isLogged == true && education.length > 0"
       ><i class="fa-solid fa-plus"></i
     ></a>
   </div>
   <div *ngIf="isLogged == false && !education.length">
+    <div class="education-empty-logout">
+      <i class="fa-solid fa-face-flushed"></i>
+      <p>Aún no se han encontrado educaciones.</p>
+    </div>
+  </div>
+  <div *ngIf="isLogged == true && !education.length">
     <a href="add-education" class="education-add-empty">
       <i class="fa-solid fa-circle-plus"></i>
       <p>Presiona aquí para crear una nueva educación</p>
     </a>
   </div>
   <div *ngIf="isLogged == false && education.length > 0">
+    <div class="education-panel" *ngFor="let e of education">
+      <div class="education-panel-content">
+        <img src="{{ e.instituteImg }}" alt="" />
+        <div class="education-panel-text">
+          <h1>{{ e.title }}</h1>
+          <h2>{{ e.instituteName }}</h2>
+          <h3 class="date-format" *ngIf="e.actualEdu === true">
+            {{ e.eduStart | date: "MMMM, yyyy" }} - Actualidad
+          </h3>
+          <h3 class="date-format" *ngIf="e.actualEdu === false">
+            {{ e.eduStart | date: "MMMM, yyyy" }} -
+            {{ e.eduEnd | date: "MMMM, yyyy" }}
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isLogged == true && education.length > 0">
     <div class="education-panel" *ngFor="let e of education">
       <div class="education-panel-content">
         <img src="{{ e.instituteImg }}" alt="" />

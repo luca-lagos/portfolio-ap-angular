@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { TokenService } from 'src/app/services/token.service';
 import { AboutMeService } from 'src/app/services/about-me.service';
 import { AboutMe } from 'src/app/models/about-me';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-about-me',

@@ -3,6 +3,7 @@ import { AuthService } from './../../services/auth.service';
 import { UserLogin } from './../../models/login';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   isLogged: boolean = false;
   isLogginFail: boolean = false;
   userLogin!: UserLogin;
-  userName!: string;
+  email!: string;
   password!: string;
   roles: string[] = [];
   errorMessage!: string;
@@ -33,42 +34,44 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-    this.userLogin = new UserLogin(this.userName, this.password);
-    this.authService.login(this.userLogin).subscribe(
-      /*
-      ** Deprecated subscribe use **
-      (data) => {
+    this.userLogin = new UserLogin(this.email, this.password);
+    this.authService.login(this.userLogin).subscribe({
+      next: (data) => {
         this.isLogged = true;
         this.isLogginFail = false;
         this.tokenService.setToken(data.token);
-        this.tokenService.setUserName(data.user_name);
+        this.tokenService.setEmail(data.email);
         this.tokenService.setAuthAuthorities(data.authorities);
         this.roles = data.authorities;
-        this.router.navigate(['']);
+        Swal.fire({
+          title: 'Success',
+          text: 'Ha iniciado sesión correctamente',
+          icon: 'success',
+          iconColor: '#20c997',
+          showConfirmButton: true,
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#20c997',
+        }).then(() => {
+          this.router.navigate(['']);
+        });
       },
-      (err) => {
+      error: (err) => {
         this.isLogged = false;
         this.isLogginFail = true;
         this.errorMessage = err.error.message;
         console.log(this.errorMessage);
-      }*/
-      {
-        next: (data) => {
-          this.isLogged = true;
-          this.isLogginFail = false;
-          this.tokenService.setToken(data.token);
-          this.tokenService.setUserName(data.user_name);
-          this.tokenService.setAuthAuthorities(data.authorities);
-          this.roles = data.authorities;
-          this.router.navigate(['']);
-        },
-        error: (err) => {
-          this.isLogged = false;
-          this.isLogginFail = true;
-          this.errorMessage = err.error.message;
-          console.log(this.errorMessage);
-        },
-      }
-    );
+        Swal.fire({
+          title: 'Error',
+          text: 'Hubo un error en el inicio de sesión',
+          icon: 'error',
+          iconColor: '#dc3545',
+          showConfirmButton: true,
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#dc3545',
+        }).then(() => {
+          this.router.navigate(['/login']);
+        });
+      },
+    });
   }
 }

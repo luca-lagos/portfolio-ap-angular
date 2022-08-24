@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
-  AUTH_URL = 'http://localhost:8080/auth';
+  AUTH_URL = 'https://backend-ap-luca-lagos.herokuapp.com/auth';
   constructor(private httpClient: HttpClient) {}
 
   public register(userRegister: UserRegister): Observable<any> {

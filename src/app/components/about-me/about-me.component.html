@@ -1,4 +1,4 @@
-<section id="about-me" *ngIf="isLogged == false && aboutMe.length > 0">
+<section id="about-me" *ngIf="isLogged == true && aboutMe.length > 0">
   <div class="about-me-title">
     <h1>Sobre mí</h1>
   </div>
@@ -11,7 +11,17 @@
     ></a>
   </div>
 </section>
-<section id="about-me" *ngIf="isLogged == false && !aboutMe.length">
+<section id="about-me" *ngIf="isLogged == false && aboutMe.length > 0">
+  <div class="about-me-title">
+    <h1>Sobre mí</h1>
+  </div>
+  <div class="about-me-content" *ngFor="let a of aboutMe">
+    <p>
+      {{ a.description }}
+    </p>
+  </div>
+</section>
+<section id="about-me" *ngIf="isLogged == true && !aboutMe.length">
   <div class="about-me-title">
     <h1>Sobre mí</h1>
   </div>
@@ -19,4 +29,13 @@
     <i class="fa-solid fa-circle-plus"></i>
     <p>Presiona aquí para crear una nueva descripción</p>
   </a>
+</section>
+<section id="about-me" style="align-items: center;" *ngIf="isLogged == false && !aboutMe.length">
+  <div class="about-me-title" style="position: absolute; left: 0; margin-left: 225px;">
+    <h1>Sobre mí</h1>
+  </div>
+  <div class="about-me-empty-logout" style="margin-top: 60px; margin-bottom: 10px;">
+    <i class="fa-solid fa-face-flushed"></i>
+    <p>Aún no se ha encontrado una descripción.</p>
+  </div>
 </section>

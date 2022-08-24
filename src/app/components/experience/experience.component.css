@@ -40,6 +40,29 @@
   box-shadow: 0px 0px 0px var(--button-color-home);
 }
 
+#experience .experience-empty-logout{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+#experience .experience-empty-logout i{
+  font-size: 150px;
+  color: var(--text-color-subtitle-home);
+  margin-bottom: 25px;  
+}
+
+#experience .experience-empty-logout p{
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-color-title-home);
+  width: 250px;
+}
+
 #experience .experience-add-empty{
   display: flex;
   flex-direction: column;
@@ -89,6 +112,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  width: 70%;
 }
 
 #experience .experience-panel .experience-panel-content img {
